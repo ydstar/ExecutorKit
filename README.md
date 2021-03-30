@@ -40,24 +40,24 @@ ExecutorKit.execute(runnable = Runnable {
 
 #### 异步任务结果回调主线程
 ```java
-        ExecutorKit.execute(0,object : ExecutorKit.Callable<String?>() {
+ExecutorKit.execute(0,object : ExecutorKit.Callable<String?>() {
 
-            //任务执行前_主线程
-            override fun onPrepare() {
-                //可以转菊花
+     //任务执行前_主线程
+     override fun onPrepare() {
+       //可以转菊花
 
-            }
+     }
 
-            //任务执行中_子线程
-            override fun onBackground(): String? {
+     //任务执行中_子线程
+     override fun onBackground(): String? {
 
-            }
+     }
 
-            //任务执行结束_主线程
-            override fun onCompleted(s: String?) {
+     //任务执行结束_主线程
+     override fun onCompleted(s: String?) {
 
-            }
-        })
+     }
+})
 ```
 
 #### 暂停线程池
