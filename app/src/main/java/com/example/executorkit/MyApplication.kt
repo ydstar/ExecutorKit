@@ -2,16 +2,17 @@ package com.example.executorkit
 
 import android.app.Application
 import com.google.gson.Gson
-import com.log.kit.ILogConfig
-import com.log.kit.ILogManager
-import com.log.kit.print.ILogPrinter
-import com.log.kit.print.console.IConsolePrinter
+import com.log.kit.LogConfig
+import com.log.kit.LogKitManager
+import com.log.kit.print.LogPrinter
+import com.log.kit.print.console.ConsolePrinter
+
 
 class MyApplication :Application(){
 
     override fun onCreate() {
         super.onCreate()
-        val iLogConfig: ILogConfig = object : ILogConfig() {
+        val logConfig: LogConfig = object : LogConfig() {
 
             override fun enable(): Boolean {
                 return super.enable()
@@ -25,7 +26,7 @@ class MyApplication :Application(){
                 return 0
             }
 
-            override fun printers(): Array<ILogPrinter?>? {
+            override fun printers(): Array<LogPrinter?>? {
                 return super.printers()
             }
 
@@ -37,7 +38,7 @@ class MyApplication :Application(){
                 }
             }
         }
-        ILogManager.getInstance().init(iLogConfig, IConsolePrinter())
+        LogKitManager.getInstance().init(logConfig, ConsolePrinter())
 
     }
 }
