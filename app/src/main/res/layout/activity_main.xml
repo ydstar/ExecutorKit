@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/text0"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:onClick="show0"
+        android:text="开启一个异步线程" />
+
+    <Button
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:onClick="show1"
+        android:text="按任务优先级执行" />
+
+    <Button
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+
+        android:gravity="center"
+        android:onClick="show2"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="暂停/恢复线程池所有任务" />
+
+    <Button
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+
+        android:gravity="center"
+        android:onClick="show3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="异步任务结果回调主线程" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="open"
+        android:text="打开iLog悬浮窗" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="close"
+        android:text="关闭iLog悬浮窗" />
+
+</LinearLayout>
