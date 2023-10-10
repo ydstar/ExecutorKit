@@ -20,6 +20,20 @@ import java.util.concurrent.locks.ReentrantLock
  * 支持按任务的优先级去执行
  * 支持线程池暂停.恢复(批量文件下载，上传)
  * 异步结果主动回调主线程
+ *
+ * 具体实现思路
+ * 1.任务优先级
+ *使用PriorityBlockingQueue这个排序的队列
+ *创建一个PriorityRunnable类(具有可比较线程优先级的Runnable),去实现Runnable接口和Comparable接口,然后实现run()方法和compareTo
+ *在compareTo方法中比较优先级,这样一来优先级高的任务先执行
+ *在run方法中去执行接口Runnable中的run方法
+ *
+ *2.暂停和恢复
+ *使用ReentrantLock,暂停的时候在线程执行前方法中 调用 mReentrantLock.lock和 mNewCondition.await()
+ *恢复的时候用mNewCondition.signalAll()和mReentrantLock.unlock()
+ *
+ *3.异步任务回调
+ *通过handler的post方法去实现
  */
 object ExecutorKit {
     private const val TAG: String = "ExecutorKit"
